@@ -25,8 +25,8 @@ var ViewModel = function() {
     updateList = function() {
         // Setting the query paramters to FourSquare to retrive the venues list
         ClearQueryBox();
-        var foursquareClientID = 'KJXASR1JSSF2WM4CESIZ2IFICH2ELPXK1WXE1T4FBQ1A5H5X';
-        var foursquareClientSecret = '0G1MUWJDN3P5GNYWLAVC12SNTBE1TZTPANYPHWMLMT3LRSB4';
+        var foursquareClientID = 'O0GN5IC1R1TEW2AFEPYK0VSF42CYSQIZRT4530L1FANZ5E1U';
+        var foursquareClientSecret = 'PPZYBX5CYBASUAC15VPSSAQWQWZMJCGJX52VZ5WHBRHUIGHF';
         var foursquareSearchURI = 'https://api.foursquare.com/v2/venues/search';
         var forsquareSearchParms = {
             'client_id' : foursquareClientID,

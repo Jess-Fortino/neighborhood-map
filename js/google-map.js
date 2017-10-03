@@ -6,7 +6,7 @@ var markers = [];
 function initMap() {
 // Constructor creates a new map - only center and zoom are required.
     map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 47.618973, lng: -122.180964},
+      center: {lat: 42.0114, lng: -88.0021},
       zoom: 13,
       mapTypeControl: false
     });
