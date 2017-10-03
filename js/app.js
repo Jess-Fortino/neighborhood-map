@@ -1,7 +1,5 @@
+//Neighborhood Map data -- starting in chicago
 
-/*
-Building a neighborhood data model by inquring Foursquare with initila value of zip code 98005
-*/
 var Venue = function(data){
     this.name = data.name;
     this.address = data.location.formattedAddress[0] + ' ' + data.location.formattedAddress[1] + ' ' + data.location.formattedAddress[2];
@@ -24,7 +22,6 @@ var ViewModel = function() {
       self.query('');
     };
 
-
     updateList = function() {
         // Setting the query paramters to FourSquare to retrive the venues list
         ClearQueryBox();
@@ -41,7 +38,7 @@ var ViewModel = function() {
             'v' : '20170101'
         };
         $.ajax ({
-            // Ajex call to get the JSON list of relevant venues
+            // Ajax call to get the JSON list of relevant venues
             type: "GET",
             url: foursquareSearchURI,
             dataType: 'json',
@@ -72,7 +69,7 @@ var ViewModel = function() {
         } else {
             this.queryResults = self.venuesList();
         }
-        // hide unhide the markers as the filter progress on screen.
+        // hide and show the markers as the filter progress on screen.
         for (var i = 0; i < markers.length; i++) {
             if (this.queryResults.length <1) {
                 markers[i].setVisible(false);
