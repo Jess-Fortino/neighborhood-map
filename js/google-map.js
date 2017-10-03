@@ -19,9 +19,7 @@ function mapError() {
   // Error handling
   $('#myalert').show();
 };
- // This function populates the infowindow when the marker is clicked. We'll only allow
- // one infowindow which will open at the marker that is clicked, and populate based
- // on that markers position.
+ // This function populates the infowindow when the marker is clicked. We'll only allow one infowindow which will open at the marker that is clicked, and populate based on that markers position.
  function populateInfoWindow(marker) {
     var infowindow = new google.maps.InfoWindow();
     // Check to make sure the infowindow is not already opened on this marker.
