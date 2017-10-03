@@ -1,6 +1,6 @@
 Neighborhood Map Project-- Finding food around you!
 
-Note: This project uses Knockoutjs, Ajax, Bootstrap and Google Maps APIs.
+Note: This project uses Knockoutjs, Ajax, Bootstrap and Google Maps APIs. Also-- had some issues with initial KO & rendering and looked through various posts on the forum -- thanks!
 
 
 1.) Getting Started
