@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"
-  <title>Neighborhood Map</title>
-  <link href="css/style.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighborhood Map</title>
 </head>
+
 <body>
-    <div id="map"></div>
-    <div>
-      <!-- <input id="full-screen" type="text" placeholder="Enter your favorite Restaurant, places etc."> -->
-      <!-- <img src="images/icon-search.png" id="search-button"> -->
-      <button id="show-suggestions">Show Suggestions</button>
-      <button id="hide-suggestions">Hide Suggestions</button>
-  </div>
-  <div id="drop-down-list">
-    <ul data-bind="foreach: placesList">
-      <div id="surrounding-li"><li id="titles" data-bind="text: title, click: $parent.toggleBounce"></div>
-  </div>
+    <header id="header" class="navbar-inverse navbar-fixed-top" data-bind="template: { afterRender: updateList }">
+          <div class="text-left navbar-header">
+              <h4> <span>Find food venues by - </span> </h4>
+              <h5 id="location">
+                <span> Location  :</span>
+                <input data-bind="textInput: mapLocation, event: { change: updateList}"/>
+            </h5>
+              <h5 id="filter">
+                  <span> Filter by business name:</span>
+                  <input placeholder="Search…" data-bind="textInput: query" autocomplete="off"/>
+              </h5>
+
+              <div id="myalert" class="alert alert-warning collapse" role="alert">
+                 <p>Location Error or Bad Connection, Please try again!</p>
+             </div>
+          </div>
+    </header>
+    <main id="data" class="main container-fluid">
+        <map name="map" id="map" class="col-xs-8 pull-right"></map>
+        <aside id="leftPanel" class="col-xs-4 pull-left">
+            <div id="listings" class="list-group" data-bind="foreach: searchResults()">
+               <p class="list-group-item" data-bind="text: name, click: $parent.setVenue"></p>
+           </div>
+       </aside>
+   </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/knockoutjs.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/google-map.js"></script>
 
 
+      <script src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyAjXSRLL5OsThIS_eg0LILlVwe1hJ4VNaw&callback=initMap" async defer onerror="mapError()"></script>
 
-  <script src="https://maps.googleapis.com/maps/api/js?libaries=places&key=AIzaSyAjXSRLL5OsThIS_eg0LILlVwe1hJ4VNaw&callback=initMap" async defer></script>
-  <script src="js/jquery.min.js" type="text/javascript"></script>
-    <script src="js/knockoutjs.js" type="text/javascript"></script>
-  <script src="js/app.js" type="text/javascript"></script>
 
 </body>
 </html>
-
-
-<!-- Pittsburgh: 40.4406 -79.9959 -->
-
-<!-- var places = [
-    {title: 'Meat and Potatoes', location: {lat: 40.4431503, lng: -80.0011895}},
-    {title: 'Smoke', location: {lat: 40.4699387, lng: -79.9610646}},
-    {title: 'Dobra Tea House', location: {lat: 40.4349609, lng: -79.92263659999999}},
-    {title: 'Huszar', location: {lat: 40.4568067, lng: -79.99891529999999}},
-    {title: 'Cafe 33', location: {lat: 40.437668, lng: -79.91909199999999}},
-    {title: 'Butcher and the Rye', location: {lat: 40.4423743, lng: -80.0021089}},
-    {title: 'All India', location: {lat: 40.45220870000001, lng: -79.95263349999999}}
-  ] -->

@@ -1,110 +1,57 @@
-html, body {
+html,
+body {
+  font-family: Arial, sans-serif;
   height: 100%;
+  width: 100%;
   margin: 0;
-  padding: 0;
+  overflow: auto;
 }
-/*Phones*/
-/*@media screen and (max-width: 499px) {
-  #map {
-    height: 100%;
-  }
-}*/
 
-/*Tablets*/
-/*@media screen and (min-width: 500px) and (max-width: 960px) {
-  #map {
-    height: 100%;
-    bottom: 0px;
-    left: 362px;
-    position: absolute;
-    right: 0;
-  }
-  .drop-down {
-    background: gray;
-    height: 100%;
-    line-height: 35px;
-    padding: 0;
-    width: 340px;
-  }
-}*/
 
-/*Between Tablet/Monitor Break*/
-/*@media screen and ()*/
+input {
+  font-size: 12px;
+  color: black;
+}
 
-/*Normal Monitor and above*/
-@media screen and (min-width: 961px){
-  #full-screen {
-    position: absolute;
-    top: 10px;
-    width: 280px;
-    font-size: 14px;
-    left: 10px;
-  }
-  #search-button {
-    position: absolute;
-    top: 10px;
-    left: 295px;
-    height: 23px;
-    width: 23px;
-  }
-  #map {
-    height: 100%;
-    bottom: 0px;
-    left: 0;
-    position: absolute;
-    right: 0;
-  }
 
-  #show-suggestions {
-    position: absolute;
-    top: 50px;
-    left: 10px;
-  }
-  #hide-suggestions {
-    position: absolute;
-    top: 100px;
-    left: 10px;
-  }
+span {
+  color: white;
+  margin: 0 0 0 0;
+}
 
-  #drop-down-list {
-    top: 20px;
-    left: 20px;
-    position: absolute;
-    background-color: white;
-    width: 15%;
-  }
+.main {
+  flex: 1 1 0;
+  display: flex;
+}
+.container-fluid {
+  display: flex;
+}
 
-  li {
-    list-style-type: none;
-  }
+.list-group {
+  overflow: auto;
+  max-height: 900px;
+  margin-left: 0px;
+  margin-right: 0;
 
-  ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-  }
+}
+.navbar-header {
+  text-align: left;
+  bottom: 0;
+  width: 100%;
+}
 
-  #surrounding-li {
-    margin: 0;
-    padding: 5px 0 5px 10px;
-    background-color: black;
-    color: #D5D5D5;
-    font-family: sans-serif;
-    border-bottom: 1px solid gray;
-  }
+main {
+    margin-top: 100px;
+}
+#map {
+  top: 100px;
+  bottom:0px;
+  right: 0px;
+  height: 100%;
+  max-height: 100%;
+  position: absolute;
+}
 
-  #surrounding-li:hover {
-    background-color: gray;
-  }
-  /*.drop-down {
-    background: #fff;
-    border: 1px solid #999;
-    border-radius: 3px;
-    height: 100%;
-    line-height: 35px;
-    padding: 10px 10px 30px 10px;
-    text-align: left;
-    width: 340px;
-    margin: 0;
-  }*/
+#myalert {
+  display: none;
 }
