@@ -55,7 +55,7 @@ main {
   display: none;
 }
 
-
+/*Resposniveness*/
 @media screen and (min-width: 680px) {
   nav {
     float: left;
